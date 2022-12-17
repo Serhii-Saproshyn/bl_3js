@@ -129,8 +129,20 @@
 // do {
 //   number = prompt('Hello, enter please the number greater then 100.', "");
 // } while (number < 100 && number !== null);
-// if (number === null) {alert('Goodbye')    
+// if (number === null) {alert('Goodbye')
 // } else {console.log("Ввели пароль: ", number);}
 
+//6. При завантаженні сторінки користувачу у prompt пропонується ввести число 'Hello, enter please the number.'.
+// Введене число додається до значення змінної total.
+//Операція введення числа продовжується до тих пір, поки користувач не натисне кнопку Cancel у prompt.
+//Після того, як користувач припинив введення і натиснув кнопку Cancel, показати alert з рядком "The total sum of the entered numbers is [number]."
+//Робити перевірку, що користувач ввів саме число, а не інший тип даних не потрібно.
 
+// let num = prompt("Hello, enter please the number.", "");
+// let total = 0;
 
+// while (num !== null) {
+//   total += Number(num);
+//   num = prompt("Hello, enter please the number.", "");
+// }
+// alert(`The total sum of the entered numbers is ${total}.`)
