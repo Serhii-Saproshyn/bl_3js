@@ -37,6 +37,19 @@
 // const max = 12;
 // const min = 2;
 // for (let i = max; i >= min; i -= 1) {
-//    if (i%2 === 0) {console.log(i);    
-//    } 
+//    if (i%2 === 0) {console.log(i);
+//    }
 // }
+//4. За допомогою циклу for знайдіть добуток усіх парних чисел у проміжку від min до max включно
+
+const max = 12;
+const min = 2;
+let total = 1;
+
+for (let i = min; i <= max; i += 1) {
+    if (i % 2 === 0) {
+        
+        total *= i;
+   }
+}
+console.log(total);
