@@ -65,20 +65,55 @@
 //Якщо користувач вводить щось відмінне від "adminPassword", то вивести рядок "Goodbye!"
 //Якщо користувач вводить "adminPassword", то вивести у консоль рядок "Hello!"
 
-const login = prompt("Hello, please enter your login!");
-const loginTrue = "admin";
-const passTrue = "adminPassword";
-if (login === null) {
-  console.log("Authorization has been canceled");
-} else if (login.toLowerCase() === loginTrue) {
-  const pass = prompt("Please enter your password");
-  if (pass === passTrue) {
-    console.log("Hello!");
-  } else if (pass === null) {
-    console.log("Authorization has been canceled");
-  } else {
-    console.log("Goodbye");
-  }
-} else {
-  console.log("Goodbye");
-}
+// const login = prompt("Hello, please enter your login!");
+// const loginTrue = "admin";
+// const passTrue = "adminPassword";
+//
+//
+// var 1
+// if (login === null) {
+//   console.log("Authorization has been canceled");
+// } else if (login.toLowerCase() === loginTrue) {
+//   const pass = prompt("Please enter your password");
+//   if (pass === passTrue) {
+//     console.log("Hello!");
+//   } else if (pass === null) {
+//     console.log("Authorization has been canceled");
+//   } else {
+//     console.log("Goodbye");
+//   }
+// } else {
+//   console.log("Goodbye");
+// }
+//
+//
+// var 2
+// switch (login) {
+//   case null:
+//     console.log("Authorization has been canceled");
+//     break;
+
+//   case "admin":
+//     const pass = prompt("Please enter your password");
+//     switch (pass) {
+//       case null:
+//         console.log("Authorization has been canceled");
+//         break;
+
+//       case passTrue:
+//         console.log("Hello!");
+//         break;
+//       default:
+//         console.log("Goodbye");
+//         break;
+//     }
+//     break;
+
+//   case !"admin":
+//     console.log("Goodbye");
+//     break;
+//   default:
+//     console.log("Goodbye");
+
+//     break;
+// }
