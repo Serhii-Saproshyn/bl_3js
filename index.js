@@ -117,3 +117,20 @@
 
 //     break;
 // }
+
+//7. Напишіть цикл, який пропонує ввести
+//число більше 100 через prompt 'Hello, enter please the number greater then 100.' та виводить його у alert, якщо умова виконана
+//Якщо користувач ввів інше число, то попросити ввести ще раз і так далі.
+//Цикл повинен запитувати число, поки користувач не введе число більше 100.
+// Якщо користувач натисне кнопку відміни у prompt, то у alert треба вивести 'Goodbye'.
+
+// let number;
+
+// do {
+//   number = prompt('Hello, enter please the number greater then 100.', "");
+// } while (number < 100 && number !== null);
+// if (number === null) {alert('Goodbye')    
+// } else {console.log("Ввели пароль: ", number);}
+
+
+
