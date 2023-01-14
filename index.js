@@ -192,9 +192,9 @@
 //   return totalSalary;
 // }
 // console.log(getTotalSalary(salaries))
-//3. Напишіть фукцію calcTotalPrice(stones, stonesName),
-//яка приймає масив об'єктів і рядок з назвою каменю.
-//Функція обчислює і повертає загальну вартість каменів з таким іменем
+// 3. Напишіть фукцію calcTotalPrice(stones, stonesName),
+// яка приймає масив об'єктів і рядок з назвою каменю.
+// Функція обчислює і повертає загальну вартість каменів з таким іменем
 
 // const stones = [
 //   { name: "emerald", price: 1000, quantity: 4 },
@@ -248,3 +248,65 @@
 //   return newObject;
 // };
 // console.log(updateObject({ a: 1, b: 2, c: 3 }, "b", "a", "c"));
+
+// 8. Напиши скрипт керування особистим кабінетом інтернет банку.
+//Є об'єкт account, в якому необхідно реалізувати методи для роботи з балансом та історією трансакцій
+//Типів трансакцій усього два. Можна поповнити рахунок або списати з нього гроші.
+//
+const TYPES_TRANSACTION = {
+  DEPOSIT: "deposit",
+  WITHDRAW: "withdraw",
+};
+//Кожна трансакція має мати властивості: id, type, amount.
+
+const account = {
+  //поточний баланс рахунку
+  balance: 0,
+
+  //Історія трансакцій
+  transactions: [],
+
+  //Метод приймає суму та тип трансакції і створює та додає у transactions об'єкт трансакції за зразком {id, type, amount}
+  createTransaction(type, amount) {
+    if (!Object.values(TYPES_TRANSACTION).includes(type)) {
+      return;
+    }
+    const newTransaction = {
+      id: Date.now(),
+      type,
+      amount,
+    };
+    this.transactions.push(newTransaction);
+
+    if (newTransaction.type === TYPES_TRANSACTION.DEPOSIT) {
+      this.deposit(newTransaction.amount);
+    }
+  },
+
+  //Метод відповідає за додавання суми до балансу.
+  //Приймає суму трансакції.
+  //Викликає createTransaction для створення об'єкта трансакції після чого додає його в історію трансакцій
+  deposit(amount) {
+    this.balance += amount;
+  },
+
+  //Метод відповідає за списання коштів з балансу.
+  //Приймає суму трансакції, викликає createTransaction для створення об'єкту трансакції
+  //післе чого додає його в історію трансакцій
+  //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те, що недостатньо коштів на рахунку
+  withdraw(amount) {},
+
+  //Метод повертає поточний баланс
+  getBalance() {},
+
+  //Метод шукає та повертає об'єкт трансакції по id
+  getTransactionDetails(id) {},
+
+  //Метод повертає загальну суму трансакції певного типу із всієї історії трансакцій
+  getTotalSumByType(type) {},
+};
+
+account.createTransaction("deposit", 1000);
+console.log(account.transactions);
+
+console.log(account.balance);
