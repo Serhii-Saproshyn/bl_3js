@@ -431,9 +431,32 @@
 //     function getTotal (amount) {
 //         total = amount - amount*discount;
 //         return total
-//     } 
+//     }
 //     return getTotal
 // }
 
 // const newDiscount = saveDiscount(0.4)
 // console.log(newDiscount(1000))
+
+// 10. Напиши функцию конструктор User для создания пользователя со следующими свойствами
+//a. userName - имя, строка
+//b. age - возраст, число
+//c. numbersOfPost - количество постов, число
+//d. класс ожидает 1 параметр - объект настроек с одноименными свойствами
+
+//Добавь метод getInfo(), который возвращает строку:
+//`Пользователю ${} ${} лет и у него ${} публикаций.`
+
+// class User {
+//   constructor({ userName, age, numbersOfPost }) {
+//     this.userName = userName;
+//     this.age = age;
+//     this.numbersOfPost = numbersOfPost;
+//   }
+//   getInfo() {
+//     return `Пользователю ${this.userName} ${this.age} лет и у него ${this.numbersOfPost} публикаций.`;
+//   }
+// }
+// const newUser = new User({ userName: "Ivan", age: 18, numbersOfPost: 100 });
+// console.log(newUser);
+// console.log(newUser.getInfo());
