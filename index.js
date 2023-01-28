@@ -395,15 +395,29 @@
 // 7. Напишіть функцію makeCounter, яка повертає іншу
 //функцію, яка лічить і логірує кількість своїх викликів
 
-function makeCounter(){
-    let count = 0
-    function toCount(){
-        count += 1
-        console.log(count);
-    }
-    return toCount
-}
-const total = makeCounter();
-total();
-total();
-total();
+// function makeCounter(){
+//     let count = 0
+//     function toCount(){
+//         count += 1
+//         console.log(count);
+//     }
+//     return toCount
+// }
+// const total = makeCounter();
+// total();
+// total();
+// total();
+
+// 8. Напишите функцию savePassword(password) которая принимает
+//пароль и возвращает внутреннюю функцию, которая принимает
+//строку и возвращает буль true, если строка совпадает с сохраненным
+//паролем и false - если не совпадает
+
+// function savePassword(password) {
+//   function isCorrectPass(userPass) {
+//     return password === userPass;
+//   }
+//   return isCorrectPass;
+// }
+// const isValid = savePassword("pass");
+// console.log(isValid("pass"));
