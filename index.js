@@ -384,10 +384,26 @@
 //якого будуть результати виклику callback.
 //callback функція має множити елементи на 2
 
-function each(array, callback) {
-  return array.map((elem) => callback(elem));
+// function each(array, callback) {
+//   return array.map((elem) => callback(elem));
+// }
+// function multy(el) {
+//   return el * 2;
+// }
+// console.log(each([2, 4, 6], multy));
+
+// 7. Напишіть функцію makeCounter, яка повертає іншу
+//функцію, яка лічить і логірує кількість своїх викликів
+
+function makeCounter(){
+    let count = 0
+    function toCount(){
+        count += 1
+        console.log(count);
+    }
+    return toCount
 }
-function multy(el) {
-  return el * 2;
-}
-console.log(each([2, 4, 6], multy));
+const total = makeCounter();
+total();
+total();
+total();
