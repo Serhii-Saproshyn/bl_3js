@@ -301,17 +301,38 @@
 //greet(name) - коллбек, що приймає ім'я і логірує в консоль рядок "Привіт <name>"
 //Реалізуй перевірку, що prompt не пустий
 
-function letMeSeeYourName(callback) {
-  const name = prompt("What is your name?");
-  if (!name) {
-    alert("Please enter your name");
-    return;
-  }
-  callback(name);
-}
+// function letMeSeeYourName(callback) {
+//   const name = prompt("What is your name?");
+//   if (!name) {
+//     alert("Please enter your name");
+//     return;
+//   }
+//   callback(name);
+// }
 
-function greet(name) {
-  console.log(`Привіт ${name}`);
-}
+// function greet(name) {
+//   console.log(`Привіт ${name}`);
+// }
 
-letMeSeeYourName(greet);
+// letMeSeeYourName(greet);
+// / 2. Напишіть дві функції
+//makeProduct(name, price, callback) - приймає
+//ім'я та ціну товару, а також callback.
+//Функція створює об'єкт товару, додаючи йому унікальний
+//ідентіфікатор у властивість id та викликає callback
+//передаючи йому створений об'єкт.
+//showProduct(product) - коллбек, що приймає об'єкт
+//продукта і логірує його в консоль
+function makeProduct(name, price, callback) {
+  const product = {
+    name,
+    price,
+    id: Date.now()
+  };
+callback(product)
+  
+}
+function showProduct(product) {
+  console.log(product);
+}
+makeProduct("wine", 150, showProduct)
