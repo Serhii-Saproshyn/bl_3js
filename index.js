@@ -353,19 +353,17 @@
 // const maryna = makeShef("Maryna");
 // maryna("Cake");
 
-
 // 4. Виправте помилки, щоб код працював
 
 // const product = {
 //   price: 5000,
 //   showPrice() {
-//     console.log(this.price);   
+//     console.log(this.price);
 // },
 // };
 // product.showPrice();
 
 // 5. Виправте код, щоб він працював
-
 
 // function callAction(action) {
 //     action()
@@ -378,3 +376,18 @@
 //     quantity: 5,
 // }
 // callAction(item.getQuantity.bind(item));
+
+//  6. Напишіть функцію each(array, callback), яка
+//першим параметром приймає масив, а другим - функцію,
+//яка застосується до кожного елемента масива.
+//Функція each має повернути новий масив, елементами
+//якого будуть результати виклику callback.
+//callback функція має множити елементи на 2
+
+function each(array, callback) {
+  return array.map((elem) => callback(elem));
+}
+function multy(el) {
+  return el * 2;
+}
+console.log(each([2, 4, 6], multy));
