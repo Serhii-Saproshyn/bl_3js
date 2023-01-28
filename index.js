@@ -323,16 +323,32 @@
 //передаючи йому створений об'єкт.
 //showProduct(product) - коллбек, що приймає об'єкт
 //продукта і логірує його в консоль
-function makeProduct(name, price, callback) {
-  const product = {
-    name,
-    price,
-    id: Date.now()
-  };
-callback(product)
-  
-}
-function showProduct(product) {
-  console.log(product);
-}
-makeProduct("wine", 150, showProduct)
+
+// function makeProduct(name, price, callback) {
+//   const product = {
+//     name,
+//     price,
+//     id: Date.now()
+//   };
+// callback(product)
+
+// }
+// function showProduct(product) {
+//   console.log(product);
+// }
+// makeProduct("wine", 150, showProduct)
+
+// 3. Напишіть функцію makeShef(shefName), яка повертає функцію
+//makeDish(dish), яка памятає ім'я шефа під час її виклику
+//Функція makeDish має логіровать "<shef> is cooking <dish>"
+
+// function makeShef(shefName) {
+//   function makeDish(dish) {
+//     console.log(`${shefName} is cooking ${dish}`);
+//   }
+//   return makeDish;
+// }
+// const serhiy = makeShef("Serhiy");
+// serhiy("Stake");
+// const maryna = makeShef("Maryna");
+// maryna("Cake");
