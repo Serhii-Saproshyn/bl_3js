@@ -421,3 +421,19 @@
 // }
 // const isValid = savePassword("pass");
 // console.log(isValid("pass"));
+
+// 9. Напишите функцию для хранения скидки.Функция возвращает
+//другую функцию, которая принимает сумму покупки
+//и возвращает финальную сумму с сохраненной скидкой.
+
+// function saveDiscount (discount) {
+//     let total = 0;
+//     function getTotal (amount) {
+//         total = amount - amount*discount;
+//         return total
+//     } 
+//     return getTotal
+// }
+
+// const newDiscount = saveDiscount(0.4)
+// console.log(newDiscount(1000))
