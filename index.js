@@ -558,6 +558,13 @@
 
 // const onClick = (e) => {
 //   e.target === placeDiv ? alert("Ти натиснув на кнопку") : alert("Ти натиснув поза межами кнопки");
+//   function getRandomHexColor() {
+//     return `#${Math.floor(Math.random() * 16777215)
+//       .toString(16)
+//       .padStart(6, 0)}`;
+//   }
+//   const rootRef = document.querySelector(":root");
+//   rootRef.style.setProperty("--color", getRandomHexColor());
 // };
 
 // window.addEventListener("click", onClick);
