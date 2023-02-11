@@ -476,3 +476,27 @@
 // function onBtnClick() {
 //   alert(`Значення з інпута: ${inputRef.value}`);
 // }
+
+// Задача 2
+/*
+Задача 2
+По нажатию на кнопку "SWAP ME" осуществляется обмен содержимым между двумя инпутами. 
+можете понажимать на нее несколько раз или вручную сменить содержимое инпутов.
+*/
+
+// const leftSwapInput = document.querySelector("#leftSwapInput");
+// const rightSwapInput = document.querySelector("#rightSwapInput");
+// const swapButton = document.querySelector("#swapButton");
+
+// const swapInputValues = () => {
+//   const firstInputValue = leftSwapInput.value;
+//   console.log("firstInputValue", firstInputValue);
+
+//   const secondInputValue = rightSwapInput.value;
+//   console.log("secondInputValue", secondInputValue);
+
+//   leftSwapInput.value = secondInputValue;
+//   rightSwapInput.value = firstInputValue;
+// };
+
+// swapButton.addEventListener("click", swapInputValues);
