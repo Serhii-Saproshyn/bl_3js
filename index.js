@@ -568,3 +568,27 @@
 // };
 
 // window.addEventListener("click", onClick);
+
+// Задача 7
+// При клике на круг он должен следовать за курсором.
+// При повторном клике он становится в начальное положение.
+
+const outerCircle = document.querySelector(".outerCircle");
+const innerCircle = document.querySelector(".innerCircle");
+
+const onClick = () => {
+  if (outerCircle.style.position === "absolute") {
+    outerCircle.style.position = "static";
+    return;
+  }
+  outerCircle.style.position = "absolute";
+  outerCircle.style.transform = "translate(-50%, -50%)";
+
+  window.addEventListener("mousemove", (e) => {
+    let left = e.pageX;
+    let top = e.pageY;
+    outerCircle.style.top = `${top}px`;
+    outerCircle.style.left = `${left}px`;
+  });
+};
+outerCircle.addEventListener("click", onClick);
