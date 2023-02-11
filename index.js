@@ -460,3 +460,19 @@
 // const newUser = new User({ userName: "Ivan", age: 18, numbersOfPost: 100 });
 // console.log(newUser);
 // console.log(newUser.getInfo());
+
+// ===================================================================
+// 2023-02-11
+/*
+Задача 1
+Нажатие на кнопку "SHOW ME" должно выводить значение с поля ввода (смотрите на элементы в html-разметке)
+*/
+
+// const btnRef = document.querySelector("#alertButton");
+// const inputRef = document.querySelector("#alertInput");
+
+// btnRef.addEventListener("click", onBtnClick);
+
+// function onBtnClick() {
+//   alert(`Значення з інпута: ${inputRef.value}`);
+// }
