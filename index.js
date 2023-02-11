@@ -529,23 +529,35 @@
 // Задача 4
 // Кнопка "Уменьшить" делает квадрат меньше на 10 пикселей, кпопка "Увеличить" - больше на 10 пикселей.
 
-const boxRef = document.querySelector("#box");
-const decreaseBtn = document.querySelector("#decrease");
-const increaseBtn = document.querySelector("#increase");
+// const boxRef = document.querySelector("#box");
+// const decreaseBtn = document.querySelector("#decrease");
+// const increaseBtn = document.querySelector("#increase");
 
-let startSize = 50;
+// let startSize = 50;
 
-const onDecreaseBtn = () => {
-  startSize -= 10;
-  boxRef.style.width = `${startSize}px`;
-  boxRef.style.height = `${startSize}px`;
-};
+// const onDecreaseBtn = () => {
+//   startSize -= 10;
+//   boxRef.style.width = `${startSize}px`;
+//   boxRef.style.height = `${startSize}px`;
+// };
 
-const onIncreaseBtn = () => {
-  startSize += 10;
-  boxRef.style.width = `${startSize}px`;
-  boxRef.style.height = `${startSize}px`;
-};
+// const onIncreaseBtn = () => {
+//   startSize += 10;
+//   boxRef.style.width = `${startSize}px`;
+//   boxRef.style.height = `${startSize}px`;
+// };
 
-decreaseBtn.addEventListener("click", onDecreaseBtn);
-increaseBtn.addEventListener("click", onIncreaseBtn);
+// decreaseBtn.addEventListener("click", onDecreaseBtn);
+// increaseBtn.addEventListener("click", onIncreaseBtn);
+
+// Задача 5
+// Навесьте слушатель по клику и определите, когда клик происходит
+// внутри элемента с id "place" и когда клик приходится вне зоны элемента
+
+// const placeDiv = document.querySelector("#place");
+
+// const onClick = (e) => {
+//   e.target === placeDiv ? alert("Ти натиснув на кнопку") : alert("Ти натиснув поза межами кнопки");
+// };
+
+// window.addEventListener("click", onClick);
