@@ -640,3 +640,75 @@
 //     .catch(console.error);
 // }
 // greet();
+
+/**
+ * ЗАДАЧА 3
+ *
+ * Якщо ємейл і пароль користувача співпадають, під час сабміта зберігай данні з форми
+ * в локальне сховище і змінюй кнопку login на logout та роби поле введення
+ * недоступним для змін.
+ * При перезавантаженні сторінки, якщо користувач залогінився, ми маємо бачити logout-кнопку
+ * та недоступні для змін поля з данними користувача.
+ * Клік по кнопці logout повертає усе в первинний стан і видаляє данні користувача
+ * з локального сховища.
+ *
+ * Якщо введені данні не співпадають з необхідними данними, викликати аlert та
+ * повідомляти про помилку.
+ */
+
+const refs = {
+  form: document.querySelector("#login-form"),
+  email: document.querySelector('[name="email"]'),
+  password: document.querySelector('[name="password"]'),
+  button: document.querySelector('[type="submit"]'),
+};
+const PASSWORD = "qweqwe";
+const EMAIL = "zxcvb@sf.com";
+const formData = {};
+let statusLog = false;
+refs.form.addEventListener("submit", onSubmit);
+
+function onSubmit(event) {
+  event.preventDefault();
+
+  if (!statusLog) {
+    const passwordForm = refs.password.value;
+    const emailForm = refs.email.value;
+
+    if (emailForm === EMAIL && passwordForm === PASSWORD) {
+      formData.userpassword = passwordForm;
+      formData.useremail = emailForm;
+      localStorage.setItem("userData", JSON.stringify(formData));
+
+      refs.button.textContent = "logout";
+      refs.email.disabled = true;
+      refs.password.disabled = true;
+      statusLog = true;
+    } else {
+      alert("Ввели невірні дані");
+    }
+  } else {
+    refs.button.textContent = "login";
+    refs.email.disabled = false;
+    refs.password.disabled = false;
+    statusLog = false;
+    refs.email.value = "";
+    refs.password.value = "";
+    localStorage.removeItem("userData");
+  }
+}
+
+function isLog() {
+  const localStorageData = JSON.parse(localStorage.getItem("userData"));
+  console.log(localStorageData);
+  if (!localStorageData) {
+    return;
+  }
+  statusLog = true;
+  refs.email.value = localStorageData.useremail;
+  refs.password.value = localStorageData.userpassword;
+  refs.email.disabled = true;
+  refs.password.disabled = true;
+  refs.button.textContent = "logout";
+}
+isLog();
