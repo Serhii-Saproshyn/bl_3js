@@ -593,8 +593,6 @@
 // };
 // outerCircle.addEventListener("click", onClick);
 
-
-
 /**
  * ЗАДАЧА 1
  * Перероби функцію на проміс таким чином, щоб проміс повертав значення
@@ -604,11 +602,41 @@
 // function greet() {
 //     return new Promise ((resolve) => {
 //         setTimeout(() => {
-//          resolve("hello world")    
+//          resolve("hello world")
 //         }, 2000)
 //     }
 //   ).then(console.log)
 // }
-  
+
 // greet();
 
+/**
+ * ЗАДАЧА 2
+ * - Используй prompt и возвращай значение оттуда.
+ * - Создай функцию, внутри которой будет промис.
+ * Если значение не является числом, отклоняй промис и логируй "error".
+ * Если значение четное, решай промис и возвращай "even" через 1 секунду.
+ * Если значение не четное, решай промис и возвращай "odd" через 2 секунды.
+ */
+
+// function greet() {
+//   return new Promise((resolve, reject) => {
+//     const value = prompt();
+//     if (isNaN(value)) {
+//       reject("error");
+//       return;
+//     }
+//     if (value % 2 === 0) {
+//       setTimeout(() => {
+//         resolve("even");
+//       }, 1000);
+//     } else {
+//       setTimeout(() => {
+//         resolve("odd");
+//       }, 2000);
+//     }
+//   })
+//     .then(console.log)
+//     .catch(console.error);
+// }
+// greet();
