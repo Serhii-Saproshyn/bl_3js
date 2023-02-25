@@ -573,22 +573,42 @@
 // При клике на круг он должен следовать за курсором.
 // При повторном клике он становится в начальное положение.
 
-const outerCircle = document.querySelector(".outerCircle");
-const innerCircle = document.querySelector(".innerCircle");
+// const outerCircle = document.querySelector(".outerCircle");
+// const innerCircle = document.querySelector(".innerCircle");
 
-const onClick = () => {
-  if (outerCircle.style.position === "absolute") {
-    outerCircle.style.position = "static";
-    return;
-  }
-  outerCircle.style.position = "absolute";
-  outerCircle.style.transform = "translate(-50%, -50%)";
+// const onClick = () => {
+//   if (outerCircle.style.position === "absolute") {
+//     outerCircle.style.position = "static";
+//     return;
+//   }
+//   outerCircle.style.position = "absolute";
+//   outerCircle.style.transform = "translate(-50%, -50%)";
 
-  window.addEventListener("mousemove", (e) => {
-    let left = e.pageX;
-    let top = e.pageY;
-    outerCircle.style.top = `${top}px`;
-    outerCircle.style.left = `${left}px`;
-  });
-};
-outerCircle.addEventListener("click", onClick);
+//   window.addEventListener("mousemove", (e) => {
+//     let left = e.pageX;
+//     let top = e.pageY;
+//     outerCircle.style.top = `${top}px`;
+//     outerCircle.style.left = `${left}px`;
+//   });
+// };
+// outerCircle.addEventListener("click", onClick);
+
+
+
+/**
+ * ЗАДАЧА 1
+ * Перероби функцію на проміс таким чином, щоб проміс повертав значення
+ * через 2 секунди після виклику функції
+ */
+
+// function greet() {
+//     return new Promise ((resolve) => {
+//         setTimeout(() => {
+//          resolve("hello world")    
+//         }, 2000)
+//     }
+//   ).then(console.log)
+// }
+  
+// greet();
+
