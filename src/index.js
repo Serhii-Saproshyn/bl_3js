@@ -4,6 +4,7 @@ import {
   getAllProducts,
   getProductById,
   addNewProduct,
+  deleteProductById,
 } from "./requests/products";
 
 const singleProductFormRef = document.querySelector("#singleProductForm");
@@ -44,32 +45,55 @@ const singleProductRef = document.querySelector("#singleProduct");
 //   singleProductRef.innerHTML = markup;
 // }
 
-const refs = {
-  form: document.querySelector("#newProductForm"),
-  newProduct: document.querySelector("#newProductSection"),
-};
+// const refs = {
+//   form: document.querySelector("#newProductForm"),
+//   newProduct: document.querySelector("#newProductSection"),
+// };
 
-refs.form.addEventListener("submit", onNewProductFormSubmit);
+// refs.form.addEventListener("submit", onNewProductFormSubmit);
 
-async function onNewProductFormSubmit(e) {
+// async function onNewProductFormSubmit(e) {
+//   e.preventDefault();
+//   const title = e.target.elements.title.value;
+//   const price = e.target.elements.price.value;
+//   const description = e.target.elements.description.value;
+//   const {
+//     data: {
+//       title: newProductTitle,
+//       description: newProductDescription,
+//       price: newProductPrice,
+//       id: newProductId,
+//     },
+//   } = await addNewProduct({ title, price, description });
+//   const markup = `
+//        <h3>${newProductTitle}</h3>
+//        <p>${newProductDescription}</p>
+//        <p>Price:${newProductPrice}$</p>
+//        <p>${newProductId}</p>
+//      `;
+
+//   refs.newProduct.innerHTML = markup;
+// }
+
+// Task-4
+
+const deletionProductForRefs = document.querySelector("#deletionProductForm");
+
+deletionProductForRefs.addEventListener("submit", onDeleteProductFormSubmit);
+
+async function onDeleteProductFormSubmit(e) {
   e.preventDefault();
-  const title = e.target.elements.title.value;
-  const price = e.target.elements.price.value;
-  const description = e.target.elements.description.value;
-  const {
-    data: {
-      title: newProductTitle,
-      description: newProductDescription,
-      price: newProductPrice,
-      id: newProductId,
-    },
-  } = await addNewProduct({ title, price, description });
-  const markup = `
-       <h3>${newProductTitle}</h3>
-       <p>${newProductDescription}</p>
-       <p>Price:${newProductPrice}$</p>
-       <p>${newProductId}</p>
-     `;
+  const idValue = e.target.elements.deletionId.value;
 
-  refs.newProduct.innerHTML = markup;
+  try {
+    const {
+      data: { title: deleteProductTitle },
+    } = await deleteProductById(idValue);
+    alert(`${deleteProductTitle} is deleted `);
+  } catch ({ response: { status } }) {
+    if (status === 404) {
+      return alert("This product is not exist");
+    }
+    alert("Input another id");
+  }
 }
