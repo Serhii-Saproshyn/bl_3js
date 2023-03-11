@@ -12,3 +12,8 @@ export async function addNewProduct(newProduct) {
   const product = await apiDummyJson.post("/products/add", newProduct);
   return product;
 }
+
+export async function deleteProductById(id) {
+  const product = await apiDummyJson.delete(`/products/${id}`);
+  return product;
+}
