@@ -1,0 +1,18 @@
+h2 {
+  text-decoration: underline;
+}
+
+ul,
+div {
+  margin-bottom: 100px;
+}
+#allProducts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  list-style: none;
+}
+#allProducts li {
+  width: 150px;
+}
